@@ -26,13 +26,13 @@ body {
     height: calc(100vh);
     position: relative;
     color: #fff;
-
+    
     display: grid;
     grid-template-columns: 1fr min-content;
     grid-template-rows: 1fr min-content min-content;
     grid-template-areas: 
-        ". navbar"
-        "title scroll-down";
+    ". navbar"
+    "title scroll-down";
 }
 
 .header--site::before {
@@ -43,11 +43,12 @@ body {
     width: 100%;
     height: 100%;
     background: 
-        linear-gradient(to top right, rgba(0, 0, 0, 255) 5%, rgba(207, 145, 145, 0), rgba(0, 0, 0, 255) 95%),
-        url(/assets/bg.jpg);
+    linear-gradient(to top right, rgba(0, 0, 0, 255) 5%, rgba(207, 145, 145, 0), rgba(0, 0, 0, 255) 95%),
+    url(/assets/bg.jpg);
     background-size: cover;
     filter: grayscale(1);
     z-index: -1;
+    background-color: #000;
 }
 
 .header--site::after {
@@ -102,8 +103,8 @@ body {
 }
 
 .scroll-down:hover {
-    box-shadow: -3px -3px 0 #ff0;
-    transform: translate(3px, 3px);
+    box-shadow: -5px -5px 0 #ff0;
+    transform: translate(5px, 5px);
 }
 
 .navbar {
@@ -113,14 +114,17 @@ body {
     background-color: #121212;
     color: #fff;
     height: 50px;
+    z-index: 9;
 }
 
 .navbar__title {
-    text-transform: uppercase;
     display: inline-flex;
     align-items: center;
     padding: 1rem;
     flex: 1;
+    /* font-weight: 900; */
+    font-size: 1.5rem;
+    font-family: 'Playfair Display'
 }
 
 .navbar__links {
@@ -156,13 +160,10 @@ body {
     color: #121212;
 }
 
-.navbar--desktop {
-    display: none;
-}
-
 .navbar--banner {
     background: none;
     grid-area: navbar;
+    position: static;
 }
 
 .navbar--banner ul {
@@ -180,13 +181,235 @@ body {
 .section {
     padding-top: 50px;
     height: 100vh;
+    max-height: 100vh;
+    overflow: hidden;
     display: grid;
 }
 
-@media screen and (min-width: 940px) {
-    .navbar--desktop {
-        display: flex;
-    }
+.section--projects {
+    padding: 0;
+    color: #fff;
+    position: relative;
 
-    .navbar--mobile { display: none; }
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.section--projects::before {
+    content: '';
+    background: url(/assets/bg2.jpg);
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    filter: grayscale(1);
+}
+
+.pane {
+    padding: 50px;
+    padding-top: 100px;
+    background-color: #000;
+}
+
+.pane--left {
+    display: grid;
+    align-items: center;
+}
+
+.pane--right {
+    padding: 0;
+    background: linear-gradient(to right, #000f, #0000)
+}
+
+.title--section {
+    font-weight: 300;
+}
+
+.scroll-area {
+    display: grid;
+    margin-left: 1rem;
+    align-items: flex-start;
+    height: 100vh;
+    overflow-y: auto;
+    padding: 1rem;
+    padding-top: 100px;
+    grid-auto-columns: minmax(100px, 1fr);
+    grid-gap: 1rem;
+    gap: 1rem;
+}
+
+.card {
+    background-color: #fff;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    box-shadow: 1px 1px 5px #0005;
+    margin: 1rem;
+    color: #333;
+    align-self: flex-start;
+}
+
+.flex {
+    display: flex;
+}
+
+.section p {
+    font-size: 1rem;
+    margin: 1rem;
+    text-indent: 2rem;
+    line-height: 1.5;
+}
+
+.logo {
+    margin: 1rem;
+    height: 3rem;
+    width: 3rem;
+}
+
+.title--card {
+    align-self: center;
+    flex: 1;
+    font-weight: normal;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 100px);
+    grid-gap: 10px;
+    gap: 10px;
+    padding: 10px;
+    max-width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid img {
+    width: 100%;
+    border-radius: 4px;
+    box-shadow: 1px 1px 5px #0003;
+    cursor: pointer;
+}
+
+.js-img-2:hover,
+.js-img:hover {
+    transform: scale(1.2);
+}
+
+.dialog-2,
+.dialog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right:0;
+    bottom: 0;
+    z-index: 100;
+    background-color: #000c;
+    display: none;
+}
+
+.dialog-2.open,
+.dialog.open {
+    display: block;
+    overflow: auto;
+}
+
+.dialog__inner {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100%;
+    padding-right: 50vw;
+}
+
+.js-img-2-dialog,
+.js-img-dialog {
+    min-width: 320px;
+    margin: auto 15vw;
+    border-radius: 4px;
+    box-shadow: 1px 1px 5px #0005;
+}
+
+.js-img-2-dialog {
+    min-width: 648px;
+}
+
+.section--about {
+    background-color: #000d;
+    color: #fffd;
+    padding: 50px 15%;
+    padding-top: 100px;
+    display: block;
+    max-height: unset;
+    height: auto;
+}
+
+.section--about ul {
+    padding-left: 50px !important;
+    line-height: 2;
+}
+
+.section--about p {
+    margin: 2rem auto;
+}
+
+.dp {
+    width: 300px;
+    height: 300px;
+    float: right;
+    border-radius: 5px;
+    margin: 50px;
+}
+
+.section--contact {
+    padding: 50px 15%;
+    padding-top: 100px;
+    align-items: center;
+    justify-content: center;
+    grid-auto-rows: min-content;
+    position: relative;
+    height: auto;
+}
+
+.less-em {
+    color: #0007;
+    padding-left: 5rem;
+}
+
+.section--contact::before {
+    content: '';
+    border: 2px solid #000;
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    right: 2rem;
+    bottom: 2rem;
+    z-index: -1;
+}
+
+.section--contact svg {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+p a:not([class]) {
+    color: #37c;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+p a:not([class]):hover {
+    text-decoration: line-through;
+}
+
+
+@supports (shape-outside: circle(125px)) {
+    .dp {
+        /* width: 250px;
+        height: 250px; */
+        padding: 50px;
+        shape-outside: circle(125px);
+        border-radius: 50%;
+    }
 }
