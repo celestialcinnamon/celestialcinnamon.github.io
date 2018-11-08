@@ -102,6 +102,10 @@ body {
     padding: 1rem;
 }
 
+.scroll-down svg {
+    height: 2rem;
+}
+
 .scroll-down:hover {
     box-shadow: -5px -5px 0 #ff0;
     transform: translate(5px, 5px);
@@ -177,6 +181,8 @@ body {
     justify-content: right;
     background-position: right center;
 }
+
+.navbar--banner .navbar__links li { display: unset; }
 
 .section {
     padding-top: 50px;
@@ -325,14 +331,15 @@ body {
 
 .js-img-2-dialog,
 .js-img-dialog {
-    min-width: 320px;
+    min-height: 400px;
     margin: auto 15vw;
     border-radius: 4px;
     box-shadow: 1px 1px 5px #0005;
+    object-fit: contain;
 }
 
 .js-img-2-dialog {
-    min-width: 648px;
+    min-height: 400px;
 }
 
 .section--about {
