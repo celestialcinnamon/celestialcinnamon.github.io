@@ -46,6 +46,7 @@ img {
     background-color: black;
     color: white;
     min-height: 100vh;
+    position: relative;
 }
 
 .screen--home {
@@ -649,4 +650,13 @@ img {
 
 p {
     line-height: 1.5;
+}
+
+#cover {
+	position: absolute;
+	width: 100%;
+    color: #fa0075;
+    top: 0;
+	bottom: 0;
+	top: 0;
 }

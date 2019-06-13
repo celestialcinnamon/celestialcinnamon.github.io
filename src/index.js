@@ -1,5 +1,6 @@
 particlesJS.load("particles-js", "/src/particles.json");
 particlesJS.load("particles-1-js", "/src/particles.1.json");
+particlesJS.load("cover", "/src/cover.json");
 
 (function() {
     const canvas = document.getElementById('decoration')
