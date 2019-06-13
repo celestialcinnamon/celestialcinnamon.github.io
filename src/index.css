@@ -41,6 +41,7 @@ img {
     grid-template-columns: min-content 1fr;
     grid-template-rows: 1fr 1fr;
     z-index: 11;
+    overflow: hidden;
 }
 
 .screen--home .background {
