@@ -16,6 +16,7 @@
 html {
     font-family: 'Barlow', sans-serif;
     font-size: 16px;
+    background-color: #000;
     overflow-x: hidden;
 }
 
@@ -239,7 +240,7 @@ img {
 .screen .screen-title {
     font-family: 'Montserrat', sans-serif;
     font-weight: 900;
-    font-size: 3rem;
+    font-size: 3.5rem;
 }
 
 .screen--about .screen-title {
@@ -507,7 +508,7 @@ img {
 }
 
 .screen--designs {
-    /* overflow: hidden; */
+    margin-top: 2rem;
 }
 
 .screen--designs .screen-title {
@@ -594,6 +595,7 @@ img {
         grid-gap: 2rem;
         gap: 2rem;
         padding: 2rem;
+        transform: rotate(-4deg)
     }
 
     .screen--designs .screen-title {
@@ -605,6 +607,7 @@ img {
     .screen--designs .par-wrapper {
         position: sticky;
         z-index: 2;
+        padding-left: 2rem;
     }
 
     .screen--designs .par-wrapper{
